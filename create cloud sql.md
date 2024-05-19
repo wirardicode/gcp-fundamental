@@ -3,9 +3,9 @@ open your shell
 
 copy this command
 --
-gcloud sql instances create instance_name --tier=machine_type --region=location
+`gcloud sql instances create instance_name --tier=machine_type --region=location`
 <br>
-gcloud sql users set-password root --host=% --instance=instance_name --password=password
+`gcloud sql users set-password root --host=% --instance=instance_name --password=password`
 
 # create sql use console
 
@@ -39,4 +39,4 @@ set network
 1. to connetion menu on left
 2. add network on authorized networks
 3. set name = "public" or your own
-4. network range = 0.0.0.0/0 or yours
+4. network range = `0.0.0.0/0` or yours
