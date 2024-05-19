@@ -67,7 +67,7 @@ create Dockerfile
 --
 `nano Dockerfile`
 
-copy this code
+copy this code and paste to dockerfile
 --
 `FROM node:14.21.2-alpine`
 `WORKDIR /app`
