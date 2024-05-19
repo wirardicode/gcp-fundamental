@@ -17,21 +17,21 @@ create file name dockerfile
 --
 `nano Dockerfile`
 
-copy this code
+copy this code and paste to dockerfile
 --
-`FROM node:14.21.2-alpine<BR>
-WORKDIR /app<br>
-ENV PORT 5000<br>
-copy . .<br>
-RUN npm install<br>
-EXPOSE 5000<br>
-CMD["nmp", "run", "start"]`
+`FROM node:14.21.2-alpine`
+`WORKDIR /app`
+`ENV PORT 5000`
+`copy . .`
+`RUN npm install`
+`EXPOSE 5000`
+`CMD["nmp", "run", "start"]`
 
 Active API articat registry, cloud run, cloud build active
 --
-`gcloud services enable artifactregistry.googleapis.com`<br>
-`cloudbuild.googleapis.com`<br>
-`run.googleapis.com`<br>
+`gcloud services enable artifactregistry.googleapis.com`
+`cloudbuild.googleapis.com`
+`run.googleapis.com`
 
 create artifac registry repo
 --
@@ -69,13 +69,13 @@ create Dockerfile
 
 copy this code
 --
-`FROM node:14.21.2-alpine<br>
-WORKDIR /app<br>
-COPY . .<br>
-RUN npm install<br>
-RUN npm run build<br>
-EXPOSE 8080<br>
-CMD [ "npm", "run", "start"]`
+`FROM node:14.21.2-alpine`
+`WORKDIR /app`
+`COPY . .`
+`RUN npm install`
+`RUN npm run build`
+`EXPOSE 8080`
+`CMD [ "npm", "run", "start"]`
 
 make repo to save frontend
 --
