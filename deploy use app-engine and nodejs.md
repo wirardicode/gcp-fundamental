@@ -10,24 +10,24 @@ after that choose <b>I'll do this later</b> for program language
 code
 --
 make your own code or use this repo<br>
-git clone -b gae-lab https://github.com/dicodingacademy/a133-gcp-labs.git
+`git clone -b gae-lab https://github.com/dicodingacademy/a133-gcp-labs.git`
 
 change directory
 --
-cd a133-gcp-labs/ 
+`cd a133-gcp-labs/ `
 
 run in local
 --
-npm start<br>
+`npm start`<br>
 then use <b>preview</b> and change port into 8000
 
 create file
 --
 create file name <b>app.yaml</b><br>
 then copy this code<br>
-runtime: nodejs20
-service: "service_name" or "default"
+`runtime: nodejs20`
+`service: "service_name" or "default"`
 
 deploy it
 --
-gcloud app deploy
+`gcloud app deploy`
