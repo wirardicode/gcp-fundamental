@@ -7,43 +7,43 @@ I have two directory: Notes App directory for frontend, and Notes API directory 
 Clone backend file
 --
 use cloud shell then copy this command:<br>
-git clone -b notes-api https://github.com/dicodingacademy/a133-gcp-labs.git notes-api
+`git clone -b notes-api https://github.com/dicodingacademy/a133-gcp-labs.git notes-api`
 
 change directory
 --
-cd notes-api/
+`cd notes-api/`
 
 create file name dockerfile
 --
-nano Dockerfile
+`nano Dockerfile`
 
 copy this code
 --
-FROM node:14.21.2-alpine<BR>
+`FROM node:14.21.2-alpine<BR>
 WORKDIR /app<br>
 ENV PORT 5000<br>
 copy . .<br>
 RUN npm install<br>
 EXPOSE 5000<br>
-CMD["nmp", "run", "start"]
+CMD["nmp", "run", "start"]`
 
 Active API articat registry, cloud run, cloud build active
 --
-gcloud services enable artifactregistry.googleapis.com<br>
-cloudbuild.googleapis.com <br>
-run.googleapis.com <br>
+`gcloud services enable artifactregistry.googleapis.com`<br>
+`cloudbuild.googleapis.com`<br>
+`run.googleapis.com`<br>
 
 create artifac registry repo
 --
-gcloud artifacts repositories create <<new_repo_name>> --repository-format=docker --location=<<region>> --async
+`gcloud artifacts repositories create <<new_repo_name>> --repository-format=docker --location=<<region>> --async`
 
 create container image
 --
-gcloud builds submit --tag <<region>>-docker.pkg.dev/${GOOGLE_CLOUD_PROJECT}/<<repo_name>>/notes-api:1.0.0
+`gcloud builds submit --tag <<region>>-docker.pkg.dev/${GOOGLE_CLOUD_PROJECT}/<<repo_name>>/notes-api:1.0.0`
 
 deploy backend
 --
-gcloud run deploy --image <<region>>-docker.pkg.dev/${GOOGLE_CLOUD_PROJECT}/<<repo_name>>/notes-api:1.0.0
+`gcloud run deploy --image <<region>>-docker.pkg.dev/${GOOGLE_CLOUD_PROJECT}/<<repo_name>>/notes-api:1.0.0`
 
 get your service URL
 --
@@ -53,41 +53,41 @@ copy and paste your backend service url in some place because it will useful
 
 change to root directory
 --
-cd..
+`cd..`
 
 clone frontend repo
 --
-git clone -b notes-app https://github.com/dicodingacademy/a133-gcp-labs.git notes-app
+`git clone -b notes-app https://github.com/dicodingacademy/a133-gcp-labs.git notes-app`
 
 change directory
 --
-cd notes-app/
+`cd notes-app/`
 
 create Dockerfile
 --
-nano Dockerfile
+`nano Dockerfile`
 
 copy this code
 --
-FROM node:14.21.2-alpine<br>
+`FROM node:14.21.2-alpine<br>
 WORKDIR /app<br>
 COPY . .<br>
 RUN npm install<br>
 RUN npm run build<br>
 EXPOSE 8080<br>
-CMD [ "npm", "run", "start"]
+CMD [ "npm", "run", "start"]`
 
 make repo to save frontend
 --
-gcloud artifacts repositories create <<new_repo_name>> --repository-format=docker --<<region>> --async
+`gcloud artifacts repositories create <<new_repo_name>> --repository-format=docker --<<region>> --async`
 
 create container image
 --
-gcloud builds submit --tag <<region>>-docker.pkg.dev/${GOOGLE_CLOUD_PROJECT}/<<repo_name>>/notes-app:1.0.0
+`gcloud builds submit --tag <<region>>-docker.pkg.dev/${GOOGLE_CLOUD_PROJECT}/<<repo_name>>/notes-app:1.0.0`
 
 deploy frontend
 --
-gcloud run deploy --image <<region>>-docker.pkg.dev/${GOOGLE_CLOUD_PROJECT}/<<repo_name>>/notes-app:1.0.0
+`gcloud run deploy --image <<region>>-docker.pkg.dev/${GOOGLE_CLOUD_PROJECT}/<<repo_name>>/notes-app:1.0.0`
 
 change url
 --
